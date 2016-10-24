@@ -94,7 +94,7 @@ POST '/movies/ratings'
     "year":"[YEAR OF THE MOVIE]",
     "rating":"[RATING AGGREGATION]",
     "ratingCount":"[RATE COUNT]",
-    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
     "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
     "art":"[PATH TO MOVIE ART]",
     "_id":"[SYSTEM ID OF THE MOVIE]"
@@ -118,7 +118,7 @@ GET '/movies/watchlist/{userId}'
         "year":"[YEAR OF THE MOVIE]",
         "rating":"[RATING AGGREGATION]",
         "ratingCount":"[RATE COUNT]",
-        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
         "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
         "art":"[PATH TO MOVIE ART]",
         "_id":"[SYSTEM ID OF THE MOVIE]"
@@ -130,7 +130,7 @@ GET '/movies/watchlist/{userId}'
         "year":"[YEAR OF THE MOVIE]",
         "rating":"[RATING AGGREGATION]",
         "ratingCount":"[RATE COUNT]",
-        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
         "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
         "art":"[PATH TO MOVIE ART]",
         "_id":"[SYSTEM ID OF THE MOVIE]"
@@ -155,7 +155,7 @@ PUT '/movies/{movieId}/watchlist/{userId}'
     "year":"[YEAR OF THE MOVIE]",
     "rating":"[RATING AGGREGATION]",
     "ratingCount":"[RATE COUNT]",
-    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
     "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
     "art":"[PATH TO MOVIE ART]",
     "_id":"[SYSTEM ID OF THE MOVIE]"
@@ -175,7 +175,7 @@ DELETE '/movies/{movieId}/watchlist/{userId}'
     "year":"[YEAR OF THE MOVIE]",
     "rating":"[RATING AGGREGATION]",
     "ratingCount":"[RATE COUNT]",
-    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
     "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
     "art":"[PATH TO MOVIE ART]",
     "_id":"[SYSTEM ID OF THE MOVIE]"
@@ -202,7 +202,7 @@ GET '/movies'
         "year":"[YEAR OF THE MOVIE]",
         "rating":"[RATING AGGREGATION]",
         "ratingCount":"[RATE COUNT]",
-        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
         "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
         "art":"[PATH TO MOVIE ART]",
         "_id":"[SYSTEM ID OF THE MOVIE]"
@@ -214,7 +214,7 @@ GET '/movies'
         "year":"[YEAR OF THE MOVIE]",
         "rating":"[RATING AGGREGATION]",
         "ratingCount":"[RATE COUNT]",
-        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+        "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
         "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
         "art":"[PATH TO MOVIE ART]",
         "_id":"[SYSTEM ID OF THE MOVIE]"
@@ -237,7 +237,7 @@ GET '/movies/{title}'
     "year":"[YEAR OF THE MOVIE]",
     "rating":"[RATING AGGREGATION]",
     "ratingCount":"[RATE COUNT]",
-    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]"
+    "ratingAverage": "[RATING AVERAGE TO BE USED BY STAR SYSTEM]",
     "subscribers":["[ARRAY OF USER SYSTEM ID's]"],
     "art":"[PATH TO MOVIE ART]",
     "_id":"[SYSTEM ID OF THE MOVIE]"
