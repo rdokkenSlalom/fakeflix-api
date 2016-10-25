@@ -58,9 +58,9 @@ POST '/user/register'
 #### body
 ```javascript
 {
-    fullName: '[FULL NAME OF THE USER]',
-    userName: '[THE USER NAME OF THE ACCOUNT]',
-    secret: '[THE PASSWORD FOR THE ACCOUNT]'
+    "fullName": "[FULL NAME OF THE USER]",
+    "userName": "[THE USER NAME OF THE ACCOUNT]",
+    "secret": "[THE PASSWORD FOR THE ACCOUNT]"
 }
 ```
 
@@ -68,7 +68,8 @@ POST '/user/register'
 ```json
 {
     "userName":"[REGISTERED USER USER NAME]",
-    "_id":"[REGISTERED USER SYSTEM ID]"}
+    "_id":"[REGISTERED USER SYSTEM ID]"
+}
 ```
 
 
@@ -82,8 +83,8 @@ POST '/movies/ratings'
 #### body
 ```javascript
 {
-    id: "[SYSTEM ID OF THE MOVIE]",
-    rating: "[INTEGER VALUE OF THE RATING]"
+    "id":"[SYSTEM ID OF THE MOVIE]",
+    "rating":"[INTEGER VALUE OF THE RATING]"
 }
 ```
 
