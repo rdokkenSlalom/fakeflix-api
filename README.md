@@ -58,8 +58,9 @@ POST '/user/register'
 #### body
 ```javascript
 {
-    username: 'username',
-    password: 'password'
+    fullName: '[FULL NAME OF THE USER]',
+    userName: '[THE USER NAME OF THE ACCOUNT]',
+    secret: '[THE PASSWORD FOR THE ACCOUNT]'
 }
 ```
 
