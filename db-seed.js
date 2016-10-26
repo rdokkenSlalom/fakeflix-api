@@ -60,7 +60,8 @@ module.exports = {
 
             users.push(new User({
                 userName: 'hpotter',
-                secret: 'password'
+                secret: 'password',
+                fullName: 'Harry Potter'
             }));
 
             console.log(messages.seeding);

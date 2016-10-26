@@ -61,6 +61,8 @@ module.exports = (server) => {
 
                 reply({
                     id: user._id,
+                    userName: user.userName,
+                    fullName: user.fullName,
                     token: token
                 });
             }, (error) => {

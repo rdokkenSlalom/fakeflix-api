@@ -7,7 +7,14 @@ let Hapi = require('hapi')
     , controllers = require('./controllers')
     , messages = require('./common/messages');
 
-let server = new Hapi.Server();
+let server = new Hapi.Server({
+    connections: {
+        routes: {
+            cors: true
+        }
+    }
+});
+
 server.connection({ port: config.port });
 
 // Register plugins

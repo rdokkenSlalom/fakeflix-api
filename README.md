@@ -42,6 +42,8 @@ The response will be a JSON Web Token encoded string. This should be stored in l
 ```json
 {
     "id": "[SYSTEM ID OF THE USER]",
+    "userName": "[USER NAME FOR THE ACCOUNT]",
+    "fullName": "[USER'S FULL NAME]",
     "token": "[ENCODED USER OBJECT]"
 }
 ```
