@@ -4,17 +4,30 @@ let diskdb = require('diskdb')
     , config = require('../config')
     , db = diskdb.connect(config.path, ['movies']);
 
+let updateMovieListRatings = (list) => {
+    var updated = [];
+    if (list.length > 0) {
+    for (var i = 0; i < list.length; i++) {
+            if (list[i].ratingCount === 0) {
+                list[i].ratingAverage = 0;
+            } else {
+                list[i].ratingAverage = Math.round(list[i].rating / list[i].ratingCount);
+            }
+            
+            updated.push(list[i]);
+        }
+    }
+
+    return updated;
+};
+
 let API = {
     find: () => {
         return new Promise((resolve, reject) => {
             try {
                 let results = db.movies.find();
                 
-                for (var i = 0; i < results.length; i++) {
-                    results[i].ratingAverage = Math.round(results[i].rating / results[i].ratingCount);
-                }
-
-                resolve(results);
+                resolve(updateMovieListRatings(results));
             }
             catch (error) {
                 reject(error);
@@ -43,12 +56,11 @@ let API = {
                     var subscriptions = [];
                     for (var i = 0; i < results.length; i++) {
                         if (results[i].subscribers.indexOf(query.id) !== -1) {
-                            results[i].ratingAverage = Math.round(results[i].rating / results[i].ratingCount);
                             subscriptions.push(results[i]);
                         }
                     }
 
-                    resolve(subscriptions);
+                    resolve(updateMovieListRatings(subscriptions));
                 }, (error) => {
                     reject(error);
                 });
