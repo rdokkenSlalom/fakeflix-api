@@ -24,11 +24,9 @@ module.exports = (server) => {
         handler: (request, reply) => {
             authorize(request).then((valid) => {
                 api.find().then((movies) => {
-                    // for (var i = 0; i < movies.length; i++) {
-                    //     movies[i].art = 'data:image/png;base64,' + toBase64('.' + movies[i].art);
-                    // }
-
-                    console.log(movies);
+                    for (var i = 0; i < movies.length; i++) {
+                        movies[i].art = 'data:image/png;base64,' + toBase64('.' + movies[i].art);
+                    }
 
                     reply(movies);
                 }, (error) => {
@@ -69,7 +67,7 @@ module.exports = (server) => {
         handler: (request, reply) => {
             authorize(request).then((valid) => {
                 let query = {
-                    id: request.payload.id,
+                    _id: request.payload._id,
                     rating: request.payload.rating
                 };
 

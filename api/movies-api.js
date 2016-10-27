@@ -135,20 +135,17 @@ let API = {
     },
 
     updateRatings: (query) => {
-        console.log(query);
-
         return new Promise((resolve, reject) => {
-            API.findOne({ _id: query.id }).then((result) => {
+            API.findOne({ _id: query._id }).then((result) => {
                 if (result) {
-                    console.log('ORIGINAL', result);
                     let count = result.ratingCount + 1;
                     let rating = result.rating + query.rating;
 
-                    API.update(query.id, {
+                    API.update(query._id, {
                         ratingCount: count,
                         rating: rating
                     }).then((updateResult) => {
-                        API.findOne({ _id: query.id }).then((updated) => {
+                        API.findOne({ _id: query._id }).then((updated) => {
                             updated.ratingAverage = Math.round(updated.rating / updated.ratingCount);
                             resolve(updated)
                         }, (error) => {
