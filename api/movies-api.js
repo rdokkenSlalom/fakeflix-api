@@ -9,6 +9,11 @@ let API = {
         return new Promise((resolve, reject) => {
             try {
                 let results = db.movies.find();
+                
+                for (var i = 0; i < results.length; i++) {
+                    results[i].ratingAverage = Math.round(results[i].rating / results[i].ratingCount);
+                }
+
                 resolve(results);
             }
             catch (error) {
@@ -21,6 +26,8 @@ let API = {
         return new Promise((resolve, reject) => {
             try {
                 let result = db.movies.findOne(query);
+                result.ratingAverage = Math.round(result.rating / result.ratingCount);
+
                 resolve(result);
             }
             catch (error) {
@@ -36,6 +43,7 @@ let API = {
                     var subscriptions = [];
                     for (var i = 0; i < results.length; i++) {
                         if (results[i].subscribers.indexOf(query.id) !== -1) {
+                            results[i].ratingAverage = Math.round(results[i].rating / results[i].ratingCount);
                             subscriptions.push(results[i]);
                         }
                     }
@@ -63,6 +71,7 @@ let API = {
                             subscribers: subscribers
                         }).then((updateResult) => {
                             API.findOne({ _id: query.movieId }).then((subscribedMovie) => {
+                                subscribedMovie.ratingAverage = Math.round(subscribedMovie.rating / subscribedMovie.ratingCount);
                                 resolve(subscribedMovie)
                             }, (error) => {
                                 reject(error);
@@ -93,8 +102,9 @@ let API = {
                         API.update(query.movieId, {
                             subscribers: subscribers
                         }).then((updateResult) => {
-                            API.findOne({ _id: query.movieId }).then((subscribedMovie) => {
-                                resolve(subscribedMovie)
+                            API.findOne({ _id: query.movieId }).then((unsubscribedMovie) => {
+                                unsubscribedMovie.ratingAverage = Math.round(unsubscribedMovie.rating / unsubscribedMovie.ratingCount);
+                                resolve(unsubscribedMovie)
                             }, (error) => {
                                 reject(error);
                             });

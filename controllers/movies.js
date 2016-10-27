@@ -47,7 +47,6 @@ module.exports = (server) => {
         handler: (request, reply) => {
             authorize(request).then((valid) => {
                 api.findOne({_id: request.params.movieId}).then((result) => {
-                    console.log(result);
                     //result.art = 'data:image/png;base64,' + toBase64('.' + results.art);
                     reply(result);
                 }, (error) => {
