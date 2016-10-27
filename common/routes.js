@@ -7,6 +7,6 @@ module.exports = {
     subscription: '/movies/{movieId}/watchlist/{userId}',
     subscriptions: '/movies/watchlist/{userId}',
     movies: '/movies',
-    movie: '/movies/{title}',
+    movie: '/movies/{movieId}',
     search: '/movies/search/{term}' // NOT IMPLEMENTED
 };

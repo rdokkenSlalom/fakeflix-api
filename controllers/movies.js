@@ -46,8 +46,10 @@ module.exports = (server) => {
         path: routes.movie,
         handler: (request, reply) => {
             authorize(request).then((valid) => {
-                api.findOne({title: request.params.title}).then((results) => {
-                    reply(results);
+                api.findOne({_id: request.params.movieId}).then((result) => {
+                    console.log(result);
+                    //result.art = 'data:image/png;base64,' + toBase64('.' + results.art);
+                    reply(result);
                 }, (error) => {
                     reject(Boom.notFound(error.message));
                 });
@@ -97,7 +99,7 @@ module.exports = (server) => {
                     for (var i = 0; i < results.length; i++) {
                         results[i].art = 'data:image/png;base64,' + toBase64('.' + results[i].art);
                     }
-                    
+
                     reply(results);
                 }, (error) => {
                     reject(Boom.notFound(error.message));
