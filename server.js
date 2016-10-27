@@ -15,14 +15,14 @@ let server = new Hapi.Server({
     }
 });
 
-server.connection({ port: config.port });
-
 // Register plugins
 server.register(inert, (error) => {
     if (error) {
         throw error;
     }
 });
+
+server.connection({ port: config.port });
 
 // Register controllers
 controllers(server);

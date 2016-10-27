@@ -9,7 +9,6 @@ let API = {
         return new Promise((resolve, reject) => {
             try {
                 let results = db.movies.find();
-                console.log('TOTAL: ', results.length);
                 resolve(results);
             }
             catch (error) {

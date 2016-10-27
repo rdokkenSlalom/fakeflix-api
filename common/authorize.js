@@ -10,8 +10,6 @@ let validateAuthorization = (request) => {
         let req = request.raw.req;
         let authorization = req.headers.authorization;
 
-        console.log(authorization);
-
         return new Promise((resolve, reject) => {
             if (!authorization) {
                 reject({

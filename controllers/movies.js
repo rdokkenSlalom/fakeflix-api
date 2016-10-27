@@ -1,12 +1,18 @@
 'use strict';
 
 let Boom = require('boom')
+    , fs = require('fs')
     , config = require('../config')
     , methods = require('../common/methods')
     , messages = require('../common/messages')
     , authorize = require('../common/authorize')
     , routes = require('../common/routes')
     , api = require('../api').movies;
+
+let toBase64 = (file) => {
+    let bitmap = fs.readFileSync(file);
+    return new Buffer(bitmap).toString('base64')
+};
 
 module.exports = (server) => {
     //
@@ -18,6 +24,10 @@ module.exports = (server) => {
         handler: (request, reply) => {
             authorize(request).then((valid) => {
                 api.find().then((results) => {
+                    for (var i = 0; i < results.length; i++) {
+                        results[i].art = 'data:image/png;base64,' + toBase64('.' + results[i].art);
+                    }
+
                     reply(results);
                 }, (error) => {
                     reject(Boom.notFound(error.message));
@@ -84,6 +94,10 @@ module.exports = (server) => {
                 };
 
                 api.findBySubscriberMovies(query).then((results) => {
+                    for (var i = 0; i < results.length; i++) {
+                        results[i].art = 'data:image/png;base64,' + toBase64('.' + results[i].art);
+                    }
+                    
                     reply(results);
                 }, (error) => {
                     reject(Boom.notFound(error.message));
