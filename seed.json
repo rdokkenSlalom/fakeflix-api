@@ -1,1 +1,112 @@
-{"movies":[{"title":"Monopoly","description":"A board game movie","year":"2000","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/monopoly.jpg"},{"title":"The Dork Knight","description":"The dorkness rises","year":"2001","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/dork_knight.jpg"},{"title":"Chutes and Ladders","description":"Another board game movie","year":"2010","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/chutes_and_ladders.jpg"},{"title":"Hungry Hippos","description":"The hunger never ends","year":"1994","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/hungry_hippos.jpg"},{"title":"Enemy of Bill Gates","description":"The empire shall rise","year":"2003","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/enemy_bill_gates.jpg"},{"title":"Mr. Bean","description":"The philosopher is stoned","year":"1989","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/mr_bean.jpg"},{"title":"Leg Stuck In a Car","description":"I hate manure","year":"1990","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/leg_stuck_in_car.jpg"},{"title":"Lord of the Bling","description":"The return of the peasant","year":"1995","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/lord_of_bling.jpg"},{"title":"Titanic","description":"That door really fit two people","year":"2015","rating":0,"ratingCount":0,"subscribers":[],"art":"/assets/titanic.jpg"}]}
+{
+  "movies": [
+    {
+      "title": "Monopoly",
+      "description": "A board game movie",
+      "year": "2000",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/monopoly.jpg"
+    },
+    {
+      "title": "The Dork Knight",
+      "description": "The dorkness rises",
+      "year": "2001",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/dork_knight.jpg"
+    },
+    {
+      "title": "Chutes and Ladders",
+      "description": "Another board game movie",
+      "year": "2010",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/chutes_and_ladders.jpg"
+    },
+    {
+      "title": "Hungry Hippos",
+      "description": "The hunger never ends",
+      "year": "1994",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/hungry_hippos.jpg"
+    },
+    {
+      "title": "Enemy of Bill Gates",
+      "description": "The empire shall rise",
+      "year": "2003",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/enemy_bill_gates.jpg"
+    },
+    {
+      "title": "Mr. Bean",
+      "description": "The philosopher is stoned",
+      "year": "1989",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/mr_bean.jpg"
+    },
+    {
+      "title": "Leg Stuck In a Car",
+      "description": "I hate manure",
+      "year": "1990",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/leg_stuck_in_car.jpg"
+    },
+    {
+      "title": "Lord of the Bling",
+      "description": "The return of the peasant",
+      "year": "1995",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/lord_of_bling.jpg"
+    },
+    {
+      "title": "Titanic",
+      "description": "That door really fit two people",
+      "year": "2015",
+      "rating": 0,
+      "ratingCount": 0,
+      "subscribers": [
+
+      ],
+      "art": "\/assets\/titanic.jpg"
+    },
+    {
+      "title": "Clutter Island",
+      "description": "There is no more room for this owl",
+      "year": "2002",
+      "rating": 0,
+      "subscribers": [
+      ],
+      "art": "\/assets\/clutter_island.jpg"
+    }
+  ]
+}
