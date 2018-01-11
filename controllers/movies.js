@@ -30,7 +30,7 @@ module.exports = (server) => {
 
                     reply(movies);
                 }, (error) => {
-                    reject(Boom.notFound(error.message));
+                    reply(Boom.notFound(error.message));
                 });
             }, (error) => {
                 reply(Boom.unauthorized(error.message));
@@ -50,7 +50,7 @@ module.exports = (server) => {
                     result.art = 'data:image/png;base64,' + toBase64('.' + result.art);
                     reply(result);
                 }, (error) => {
-                    reject(Boom.notFound(error.message));
+                    reply(Boom.notFound(error.message));
                 });
             }, (error) => {
                 reply(Boom.unauthorized(error.message));
@@ -58,9 +58,9 @@ module.exports = (server) => {
         }
     });
 
-    // 
+    //
     // Movie rating
-    // 
+    //
     server.route({
         method: methods.post,
         path: routes.rate,
@@ -157,4 +157,3 @@ module.exports = (server) => {
         }
     });
 }
-

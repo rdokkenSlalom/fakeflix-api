@@ -61,7 +61,8 @@ module.exports = {
             users.push(new User({
                 userName: 'hpotter',
                 secret: 'password',
-                fullName: 'Harry Potter'
+                fullName: 'Harry Potter',
+                profileImage: 'https://api.adorable.io/avatars/64/hpotter.png'
             }));
 
             console.log(messages.seeding);

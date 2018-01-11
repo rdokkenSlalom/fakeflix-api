@@ -33,7 +33,7 @@ module.exports = {
 
                 if (result) {
                     if (credentials.skipSecret) {
-                        resolve(result);                        
+                        resolve(result);
                     } else {
                         if (result.secret === credentials.secret) {
                             resolve(result);
@@ -55,6 +55,20 @@ module.exports = {
         });
     },
 
+    findOneById: (id) => {
+        return new Promise((resolve, reject) => {
+            try {
+                let result = db.users.findOne({
+                    _id: id
+                });
+                resolve(result);
+            }
+            catch (error) {
+                reject(error);
+            }
+        });
+    },
+
     register: (userInfo) => {
         return new Promise((resolve, reject) => {
             try {
@@ -67,6 +81,7 @@ module.exports = {
                         message: messages.accountExists
                     }));
                 } else {
+                    userInfo.profileImage = `https://api.adorable.io/avatars/64/${userInfo.userName}.png`;
                     resolve(db.users.save(new User(userInfo)));
                 }
             }

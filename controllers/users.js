@@ -5,6 +5,7 @@ let Boom = require('boom')
     , config = require('../config')
     , methods = require('../common/methods')
     , messages = require('../common/messages')
+    , authorize = require('../common/authorize')
     , routes = require('../common/routes')
     , api = require('../api');
 
@@ -45,9 +46,9 @@ let validateRegistration = (payload) => {
 };
 
 module.exports = (server) => {
-    // 
+    //
     // Account login
-    // 
+    //
     server.route({
         method: methods.post,
         path: routes.logIn,
@@ -63,7 +64,8 @@ module.exports = (server) => {
                     id: user._id,
                     userName: user.userName,
                     fullName: user.fullName,
-                    token: token
+                    token: token,
+                    profileImage: user.profileImage,
                 });
             }, (error) => {
                 reply(Boom.unauthorized(error.message));
@@ -81,7 +83,6 @@ module.exports = (server) => {
             validateRegistration(request.payload).then((userInfo) => {
                 api.users.register(userInfo).then((result) => {
                     delete result.secret;
-
                     reply(result);
                 }, (error) => {
                     reply(reply(Boom.notAcceptable(error.message, userInfo)));
@@ -91,5 +92,25 @@ module.exports = (server) => {
             });
         }
     });
-}
 
+    //
+    // Get single
+    //
+    server.route({
+        method: methods.get,
+        path: routes.user,
+        handler: (request, reply) => {
+            authorize(request).then((valid) => {
+                api.users.findOneById(request.params.userId)
+                .then((result) => {
+                    delete result.secret;
+                    reply(result);
+                }, (error) => {
+                    reply(Boom.notFound(error.message));
+                });
+            }, (error) => {
+                reply(Boom.unauthorized(error.message));
+            });
+        }
+    });
+}
