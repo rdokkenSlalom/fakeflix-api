@@ -6,9 +6,10 @@ Bootcamp API is a simple restful endpoint to retreive movie data for the fakefli
 
 1. Open your terminal/CLI.
 2. Clone the project from git `git clone git@bitbucket.org:slalom-consulting/fakeflix-api.git`
-3. Load Dependencies: `npm install`
-4. Start the Server: `npm run start`
-5. This will start the API server on `port 9000`.
+3. Open the directory `cd fakeflix-api`
+4. Load Dependencies: `npm install`
+5. Start the Server: `npm run start`
+6. This will start the API server on `port 9000`.
 
 Works with `Linux` `Mac` or `Windows`
 
