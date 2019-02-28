@@ -22,7 +22,8 @@ server.register(inert, (error) => {
     }
 });
 
-server.connection({ port: config.port });
+server.connection({ port: config.port,
+                    host: 'localhost' });
 
 // Register controllers
 controllers(server);
